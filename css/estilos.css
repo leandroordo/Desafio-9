@@ -1,0 +1,179 @@
+@import url("https://fonts.cdnfonts.com/css/pretendo");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background-color: #000;
+}
+
+body {
+  padding-top: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 40px;
+  background: #0a0a0a;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(15, 15, 15, 1) 100%
+  );
+  height: 100%;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 7px hsla(0, 50%, 50%, 1);
+}
+
+h1 > strong {
+  font-style: italic;
+}
+
+#cajas {
+  width: 80%;
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#cajas > div {
+  width: 200px;
+  height: 200px;
+  border: 10px solid #000;
+  transition: background-position 0.9s linear 2s, border-bottom-color 1.2s,
+    background-color 0.5s;
+  transition-delay: 0.4s;
+  background-color: #000;
+  background-position: -180px -40px;
+  background-repeat: no-repeat;
+}
+
+#cajas > div[title="Presentado"] {
+  background-position: 20px 20px;
+  background-color: #fff;
+  border-bottom-color: #fff;
+}
+
+#cajas > div:after {
+  transition: background-position 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.7s,
+    box-shadow 0.2s linear 0.7s;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: url("../img/cortina.png") -100px -2px no-repeat;
+  position: absolute;
+}
+
+#cajas > div[title="Presentado"]:after {
+  background-position: 100px -2px;
+  box-shadow: -19px 20px 36px 5px hsla(0, 100%, 100%, 0.5);
+}
+
+#cajas > div:not([title="Presentado"]):hover:after {
+  transition: background-position 1s;
+  transition-delay: 0s;
+  background-position: -80px -2px;
+}
+
+#mario {
+  background: url("../img/mario.png");
+}
+
+#luigi {
+  background: url("../img/luigi.png");
+}
+
+#bowser {
+  background: url("../img/bowser.png");
+}
+
+/*
+  Esta línea contiene un error
+#Peach { */
+#peach {
+  background: url("../img/peach.png");
+}
+
+#yoshi {
+  background: url("../img/yoshi.png");
+}
+
+/*Faltaba definir este estilo*/
+#toad {
+  background: url("../img/toad.png");
+}
+
+#toadette {
+  /*
+    Esta línea contiene un error
+    background: url('./img/toadette.jpg');
+    Probablemente el nombre del archivo podría corregirse*/
+  background: url("../img/toadette..png");
+}
+
+#daisy {
+  /*
+    Esta línea contiene un error
+    background: url("..img/daisy,png");*/
+  background: url("../img/daisy.png");
+}
+
+.botonContainer {
+  margin: 72px 0;
+  text-align: center;
+}
+.botonNintendo {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  white-space: nowrap;
+  background: #e70012;
+  border-radius: 100px;
+  border: 3px solid #fff;
+  border-width: 5px;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 24px;
+  font-family: Pretendo;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 1px;
+  transition-duration: 0.4s;
+}
+.botonNintendo:hover {
+  transition-duration: 0.1s;
+  background-color: #ce0213;
+}
+.botonNintendo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+.botonNintendo:active::after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 100px;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.botonNintendo:active {
+  top: 1px;
+}
