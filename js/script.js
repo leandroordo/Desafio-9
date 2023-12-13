@@ -2,7 +2,7 @@ function promptPersonaje() {
   const respuesta = window.prompt(
     "¿Quién se presenta hoy? (Mario, Luigi, Bowser, Peach, Yoshi, Toad, Toadette, Daisy)"
   );
-
+  console.log(`El usuario eligió que hoy se presente ${respuesta}`);
   return getNombrePersonaje(respuesta);
 }
 
